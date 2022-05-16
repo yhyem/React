@@ -10,65 +10,66 @@ function Introduce(props) {
     const [hobby1, setHobby1] = useState("");
     const [hobby2, setHobby2] = useState("");
     const [hobby3, setHobby3] = useState("");
+    const [greet, setGreet] = useState("자기소개 페이지");
 
 
-
-    function onChangename(e) {
+    function onChangeName(e) {
         setName(e.target.value);
     }
 
-    function onChangeage(e) {
+    function onChangeAge(e) {
         setAge(e.target.value);
     }
 
-    function onChangepart(e) {
+    function onChangePart(e) {
         setPart(e.target.value);
     }
 
-    function onChangehobby1(e) {
+    function onChangeHobby1(e) {
         setHobby1(e.target.value);
     }
 
-    function onChangehobby2(e) {
+    function onChangeHobby2(e) {
         setHobby2(e.target.value);
     }
 
-    function onChangehobby3(e) {
+    function onChangeHobby3(e) {
         setHobby3(e.target.value);
     }
 
-    function onClicktitle() {
-        let title = document.getElementById('introTitle');
-        title.innerHTML = '안녕하세요! '+name+'님';
-       
-    }
-
+    const onHandleGreet = () => {
+        if(greet=='안녕하세요! '+name+'님'){
+            setGreet(name+'의 자기소개 페이지')
+        }
+        else
+            setGreet('안녕하세요! '+name+'님');
+      }
 
     return (
         <>
             <div>
                 <br></br>
                 이름을 입력해주세요 :
-                <input onChange={onChangename} value={name} />
+                <input onChange={onChangeName} value={name} />
                 <br></br>
                 나이를 입력해주세요 :
-                <input onChange={onChangeage} value={age} />
+                <input onChange={onChangeAge} value={age} />
                 <br></br>
                 파트를 입력해주세요 :
-                <input onChange={onChangepart} value={part} />
+                <input onChange={onChangePart} value={part} />
                 <br></br>
                 첫번째 취미를 입력해주세요 :
-                <input onChange={onChangehobby1} value={hobby1} />
+                <input onChange={onChangeHobby1} value={hobby1} />
                 <br></br>
                 두번째 취미를 입력해주세요 :
-                <input onChange={onChangehobby2} value={hobby2} />
+                <input onChange={onChangeHobby2} value={hobby2} />
                 <br></br>
                 세번째 취미를 입력해주세요 :
-                <input onChange={onChangehobby3} value={hobby3} />
+                <input onChange={onChangeHobby3} value={hobby3} />
             </div>
-            <h1 id="introTitle" onClick={onClicktitle}>
-                {name}의 자기소개 페이지</h1>
-                <div class="wrapImg">
+            <h1 id="introTitle" onClick={onHandleGreet}>
+                {greet}</h1>
+            <div class="wrapImg">
                 <img id="profileImg" src={bing} alt="어지러워요"></img>
             </div>
             <div id='introContent'>
