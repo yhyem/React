@@ -1,0 +1,14 @@
+// .wrapClock{
+//     text-align: center;
+// }
+
+.clock{
+    color: black;
+    transition: 0.25s;
+    font-size: 50px;
+
+    &:hover{
+        color: pink;
+        transform: scale(1.1);
+    }
+}

@@ -1,4 +1,7 @@
 import { useState, useEffect } from 'react';
+import Clock from "./js/Clock";
+import './TodoList.scss';
+
 
 const TodoList = () => {
     const [count, setCount] = useState(0);
@@ -24,12 +27,14 @@ const TodoList = () => {
         setInputText('');
     };
 
-    const todoList = todos.map(todo => (<li key={todo.id} onDoubleClick={() => {
-        onRemove(todo.id)
-        setCount(count - 1)
-    }}>
+    const todoList = todos.map(todo => (<><li key={todo.id}  >
         {todo.text}
-    </li>));
+    <button className='deleteButton' onClick={() => {
+        onRemove(todo.id);
+        setCount(count - 1);
+    }}>
+        X
+        </button></li></>));
 
     const onRemove = id => {
         const nextTodos = todos.filter(todo => todo.id !== id);
@@ -39,12 +44,20 @@ const TodoList = () => {
 
     return (
         <>
-            <input value={inputText} onChange={onChange} placeholder="할 일을 추가하세요!" required />
-            <button onClick={() => {
-                onClick()
-                setCount(count + 1)
-            }}>추가</button>
-            <ul>{todoList}</ul>
+        <div className='container'>
+            <div className='wrapTitle'>
+                <h1 className='todoTitle'>Todo List</h1>
+            </div>
+            <div className='wrapContent'>
+                <Clock />
+                <input value={inputText} onChange={onChange} placeholder="할 일을 추가하세요!" required />
+                <button className='addButton' onClick={() => {
+                    onClick()
+                    setCount(count + 1)
+                }}> + </button>
+                <ul>{todoList}</ul>
+            </div>
+            </div>
         </>
 
     );

@@ -1,5 +1,22 @@
+import './Clock.scss'
+import styled, {css} from 'styled-components';
 
 function Clock() {
+
+  const Box = styled.div`
+    text-align: center;
+  `;
+
+  const Clock = styled.h2`
+    color: black;
+    transition: 0.25s;
+    font-size: 50px;
+
+    &:hover{
+        color: ${props => props.color || 'black'};
+        transform: scale(1.1);
+    }
+  `;
 
 
   const clock = document.querySelector("h2#clock");
@@ -19,7 +36,9 @@ function Clock() {
 
   return(
     <>
-      <h2 onLoad={setInterval(getClock, 1000)} id="clock">00:00:00</h2>
+      <Box>
+        <Clock color='pink' onLoad={setInterval(getClock, 1000)}>00:00:00</Clock>
+      </Box>
     </>
 
     );
