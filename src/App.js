@@ -4,10 +4,10 @@ import Quotes from "./TodoList/js/Quotes";
 
 function App() {
   return (
-    <div>
+    <>
       <Clock/>
       <TodoList/>
-    </div>
+    </>
   );
 }
 
