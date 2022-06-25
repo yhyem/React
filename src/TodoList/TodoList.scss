@@ -1,0 +1,133 @@
+body {
+    width: max-content;
+    margin: auto;
+    padding: 1rem 3rem;
+    background-color: rgb(255, 222, 227);
+}
+
+.wrapTitle {
+    width: max-content;
+    margin: auto;
+
+}
+
+.todoTitle {
+    font-size: 30px;
+    color: #000000;
+    text-align: center;
+    font-style: bold;
+    padding: 20px;
+    padding: 0rem 5rem;
+    margin: 20px;
+    background-color: rgb(255, 226, 231);
+    border-radius: 10px;
+    border: 2px dashed rgb(255, 133, 153);
+
+}
+
+.container {
+    width: 500px;
+    border: 2px dashed rgb(255, 133, 153);
+    height: auto;
+    min-height: 700px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.wrapContent {
+    width: max-content;
+    margin: auto;
+}
+
+.wrapButton {
+    width: max-content;
+    margin: auto;
+    display: flex;
+}
+
+.addButton {
+    width: 30px;
+    margin-left: 10px;
+    border: 1px #000000;
+    background: linear-gradient(-45deg, pink 0%, #ffe4fa 100%);
+    border-radius: 4px;
+    color: white;
+    transition: 0.25s;
+    height: 30px;
+    line-height: 30px;
+
+    &:hover {
+        letter-spacing: 2px;
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+
+    &:active {
+        transform: scale(1.2);
+    }
+}
+
+.resetButton {
+    width: 50px;
+    margin-left: 10px;
+    border: 1px #000000;
+    background: linear-gradient(-45deg, red 0%, #ffe4fa 100%);
+    border-radius: 4px;
+    color: white;
+    transition: 0.25s;
+    height: 30px;
+    line-height: 30px;
+
+    &:hover {
+        letter-spacing: 2px;
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+
+    &:active {
+        transform: scale(1.2);
+    }
+}
+
+.deleteButton {
+    width: 30px;
+    border: 1px #000000;
+    margin: 20px;
+    border-radius: 4px;
+    transition: 0.25s;
+
+    &:hover {
+        letter-spacing: 2px;
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+
+    &:active {
+        transform: scale(1.2);
+    }
+}
+
+input {
+    height: 32px;
+    font-size: 15px;
+    border: 0;
+    border-radius: 15px;
+    outline: none;
+    padding-left: 10px;
+    background-color: rgb(233, 233, 233);
+
+}
+
+
+.list {
+    list-style: square;
+    width: 250px;
+
+    &:hover {
+        color: pink;
+    }
+}
+
+.list.checked {
+    text-decoration: line-through;
+}

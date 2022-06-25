@@ -1,12 +1,10 @@
-import Hello from './Hello';
-import Wrapper from './Wrapper';
-import Counter from './Counter';
-import InputSample from './InputSample';
-
+import TodoList from "./TodoList/TodoList";
 
 function App() {
   return (
-    <InputSample />
+    <>
+      <TodoList/>
+    </>
   );
 }
 
