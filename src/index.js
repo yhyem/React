@@ -3,13 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { RecoilRoot } from "recoil";
+
 
 const rootNode = document.getElementById("root");
 
 ReactDOM.createRoot(rootNode).render(
-  <React.StrictMode>
+  <RecoilRoot>
     <App />
-  </React.StrictMode>
+  </RecoilRoot>
 );
 
 // If you want to start measuring performance in your app, pass a function
